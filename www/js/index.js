@@ -5,7 +5,7 @@ $(function () {
 var i = localStorage.length;
 
 function save_todo() {
-    var todo = $("#input_title").val();
+    var todo = $("#input_text").val();
 
     if (todo.length) {
 
