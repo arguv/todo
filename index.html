@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>TODO app</title>
+</head>
+<body>
+<!------------------------ Start of main page: #one ------------------------>
+<div data-role="page" id="one">
+
+    <div data-role="header" data-position="inline" data-theme="b">
+        <h1>TODO</h1>
+        <a href="#two" data-theme="a" data-icon="plus" data-position="inline" data-rel="dialog">Create</a>
+    </div>
+
+    <div class="content" style="margin:3px;">
+        <ul id="todo_list">
+        </ul>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-theme="b">
+        <h1></h1>
+    </div>
+
+</div>
+
+<!------------------------ Start of second page: #two ------------------------>
+<div data-role="dialog" id="two" data-theme="b">
+
+    <div data-role="header">
+        <h1>Create</h1>
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <div data-role="fieldcontain">
+            <label for="input_text">Task:</label>
+            <input type="text" id="input_text" placeholder="Enter text here..." data-clear-btn="true" />
+        </div>
+        <a href="#one" data-rel="back" data-role="button" data-theme="b" data-icon="plus" data-iconpos="right" onClick="save_todo();">Create</a>
+        <a href="#one" data-rel="back" data-role="button" data-theme="b" data-icon="back" data-iconpos="right">Cancel</a>
+    </div>
+
+</div>
+
+<!-------------------------- Start of third page: #popup ------------------>
+<div data-role="dialog" id="popup">
+
+    <div data-role="header" data-theme="b">
+        <h1>Options</h1>
+    </div>
+
+    <div data-role="content" data-theme="a">
+        <a href="#one" data-rel="back" data-theme="b" data-role="button" data-icon="check" data-iconpos="right" onClick="done_todo();">Done</a>
+        <a href="#one" data-rel="back" data-theme="b" data-role="button" data-icon="delete" data-iconpos="right" onClick="del_todo();">Delete</a>
+        <a href="#one" data-rel="back" data-theme="b" data-role="button" data-icon="back" data-iconpos="right">Cancel</a>
+    </div>
+
+</div>
+
+<!----------------------------- script -------------------------------->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
